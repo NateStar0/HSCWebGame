@@ -1,0 +1,27 @@
+
+Log Book
+details the date, elements of project completed and difficulties faced. 
+with minimum five entries 
+between 100 and 400 words
+bullet points and colloquial language are acceptable
+reference to any code found not explicitly taught in demonstration classes - must be able to describe it
+reference to work done by each group member and allocation of duties throughout the project
+
+
+DAY 1 (30 / 9 / 22) - HELLO WORLD!
+
+Hello World! is what whould've been said in my index.html file today if I weren't on such a roll!
+Not only have I taken the initiative to read about what I plan to make (I know, shock horror!), I've taken the time to start my project practically
+Today I've set up a basic webpage structure (index.html, style.cc, index.js) (the basic markup for the structure of the site, the properties of each markup element, 
+and the logic which dictates higher-order function of some elements respectively) as the basic infrastructure of my project, as well as some basic implementation of 
+the WebGL vertex and fragment shaders (the advanced rendering language used by the GPU to render more complex elements for the site). 
+I did have some initial difficulties loading the textures for rendering, 
+however I quickly discovered my mistake (typos in function names), and upon adjustment my test worked as expected, rendering the texture to the top right of the canvas element.
+
+(See: Unknown.png)
+
+I plan to implement more mathmatical functions required for more complex rendering during my next session, perhaps importing a preexisting matrix library to save time.
+Right now I have a renderer, however that wont be much use for me if I cannot implement an instanciation system to add dynamic game elements to my project.
+
+DAY X
+

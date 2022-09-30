@@ -1,0 +1,35 @@
+/*
+    STYLE.CSS 
+
+    By Nathan Constable
+    For (HSC MAJOR AT#)
+*/
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html, body
+{
+    font-family: 'Montserrat'; font-size: 16px;
+    text-align: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-size: stretch;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	
+	perspective: 1px;
+	transform-style: preserve-3d;
+    overflow: hidden;
+
+    background-color: #fff;
+}
+
+canvas 
+{
+    background: #000;
+}
