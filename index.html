@@ -5,7 +5,7 @@
         <title>Nahoo</title>
 
         <!-- STYLING -->
-        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <!--<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>-->
         <link href="./style.css" rel="stylesheet">
         <link rel="shortcut icon" type="image/png" href="./favicon.png">
         
@@ -19,16 +19,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">  
 
         <script src="js/main.js" type="module"></script>
+        <script src="js/maths.js"></script>
         <script type="vertex_shader" id="vs_01">
             attribute vec2 a_position;
             attribute vec2 a_texCoord;
+            
+            uniform mat3 u_world;
+            uniform mat3 u_object;
+            uniform vec2 u_frame;
             
             varying vec2 v_texCoord;
 
             void main()
             {
-                gl_Position = vec4(a_position, 1, 1);
-                v_texCoord = a_texCoord;
+                gl_Position = vec4( u_world * u_object * vec3(a_position, 1), 1);
+                v_texCoord = a_texCoord + u_frame;
             }
         </script>
         
@@ -44,7 +49,6 @@
         </script>
     </head>
     <body>
-        <!-- THIS IS WHERE ALL CONTENT IS PRESENT -->
         <br>
     </body>
 </html>

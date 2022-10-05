@@ -8,7 +8,7 @@ reference to any code found not explicitly taught in demonstration classes - mus
 reference to work done by each group member and allocation of duties throughout the project
 
 
-DAY 1 (30 / 9 / 22) - HELLO WORLD!
+DAY 1 (30 / 9 / 22) - HELLO WORLD! 
 
 Hello World! is what whould've been said in my index.html file today if I weren't on such a roll!
 Not only have I taken the initiative to read about what I plan to make (I know, shock horror!), I've taken the time to start my project practically
@@ -23,5 +23,27 @@ however I quickly discovered my mistake (typos in function names), and upon adju
 I plan to implement more mathmatical functions required for more complex rendering during my next session, perhaps importing a preexisting matrix library to save time.
 Right now I have a renderer, however that wont be much use for me if I cannot implement an instanciation system to add dynamic game elements to my project.
 
-DAY X
+DAY 2 (1 / 10 / 22) - RENDERER, MATHS & MEANING
+
+Today's a day I attempt to give meaning to my renderer. Drawing sprites to the top right corver of my canvas is nice and all, but it's time I give them position, and perhaps even layering!
+If i allow all sprites to queue themselves into a 2 dimentional array (1st for layer, where index determines depth out of the screen, 2nd for individual depth compared to fellow layer elements)
+I could definitely get a pretty clean way to drawing a number of sprites to the screen.
+Still, I couldn't get hasty, first i need to give them positions and animation (through atlas-ing).
+
+Today I had a lot of trouble with matrix maths. I ended up peeking at other people's work (specifically some old threads on stackoverflow), because yeah, matrix modification is finicky, and webGL's plane isnt too inuitive to transform.
+
+Tomorrow I plan to write an input handler, ideally to just log when I press (WASD + QE), and maybe even controller support if that's even possible in a web context?
+
+DAY 3+ (5 / 10 / 22) - Wow. That was hard
+
+Over the past couple of days, I've just been fixing the matrix map and have been implementing slightly more features.
+I introduced an input system which provides which keys are pressed at any moment, and have begun to implement some gamepad mapping.
+The audio.js file is just a simple wrapper for the HTML5 audio functionality present in most modern browsers.
+
+Tomorrow I'll try to finalise the renderer to hopefully allow for primative / text drawing, possibly with a custom font, coloured blendmodes, and layers too.
+Am I overscoping? Quite possibly! Still, I've got to submit something for my major, and if I want the best product I can, I really should add these features.
+As a long term goal, i may try to include some metadata for animating sprites more easily.
+
+Day 4, I suppose - ( DD / MM / YYYY )
+
 
