@@ -44,7 +44,7 @@ Tomorrow I'll try to finalise the renderer to hopefully allow for primative / te
 Am I overscoping? Quite possibly! Still, I've got to submit something for my major, and if I want the best product I can, I really should add these features.
 As a long term goal, i may try to include some metadata for animating sprites more easily.
 
-(8 / 10 / 22) - I feel ill.
+((6th to 8th) / 10 / 22) - I feel ill.
 
 I feel like shit. Not much got done today.
 I've cleaned up the project a wee bit, but otherwise goals are the same.

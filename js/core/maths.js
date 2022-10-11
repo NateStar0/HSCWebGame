@@ -1,5 +1,5 @@
 
-class point
+export class point
 {
 	constructor(x = 0.0, y = 0.0)
     {
@@ -8,7 +8,7 @@ class point
 	}
 }
 
-class matrix3x3
+export class matrix3x3
 {
 	constructor()
     {

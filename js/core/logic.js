@@ -1,5 +1,5 @@
 
-import input from "./core/input/input.js";
+import input from "./input/input.js";
 
 export default class logic
 {

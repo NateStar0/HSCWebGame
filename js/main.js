@@ -1,25 +1,32 @@
 /*
     MAIN . JS
 
-    By Nathan Constable (2022)
+    By Nathan Constable (2022 - 2023)
 */
 
+// IMPORTING
+
 import renderer from "./core/renderer/renderer.js";
-import shaders from "./core/renderer/shaders.js";
-import logic from "./game/logic.js"
+import logic from "./core/logic.js"
+import { point, matrix3x3 } from "./core/maths.js";
 
-import sound from "./core/audio/audio.js";
-import sprite from "./core/renderer/sprite.js";
-import material from "./core/renderer/material.js";
+// GLOBALISING - (REMOVES IMPORT REQUIREMENTS) :
 
-// Main Loop
+window.point = point;
+window.matrix3x3 = matrix3x3;
+
+// PRIMARY APPLICATION LOOP
 const gameLoop = () => 
 {
+    // FOR CUSTOM FUNCTIONALITY
     window.game.update();
+
+    // FOR webGL FUNCTIONALIY
     requestAnimationFrame(gameLoop);
 }
 
-// Define the game manager
+// APPLICATION CLASS
+
 class game
 {
     constructor ()
@@ -39,33 +46,36 @@ class game
 
         document.body.appendChild(this.canvasElement);
 
-        // Get shaders
-        this.vs = shaders.vertex[0]; 
-        this.fs = shaders.fragment[0]; 
-
-        this.renderer = new renderer(this.webGL, this.vs, this.fs);
+        // Create managers
+        this.renderer = new renderer(this.webGL);
         this.logic = new logic();
-
     }
 
     update ()
     {
+        // webGL per-frame render preparation
         this.webGL.viewport(0, 0, this.canvasElement.width, this.canvasElement.height);
         this.webGL.clear(this.webGL.COLOR_BUFFER_BIT);
 
         this.webGL.enable(this.webGL.BLEND);
 		this.webGL.blendFunc(this.webGL.SRC_ALPHA, this.webGL.ONE_MINUS_SRC_ALPHA);
 
+        // application specific frame functionality
         this.logic.update();
         this.renderer.update();
 
+        // Clear for next frame
         this.webGL.flush();
     }
 }
 
 // ENABLE GAME UPON LOAD
+
 window.addEventListener("load", () => 
 { 
-    window.game = new game(); 
+    // Create application
+    window.game = new game();
+    
+    // Run application
     gameLoop();
 });

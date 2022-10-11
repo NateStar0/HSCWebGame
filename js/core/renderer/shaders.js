@@ -1,6 +1,5 @@
 
-export default shaders = 
-{
+export default {
     vertex:
     [
         `
