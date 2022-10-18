@@ -1,4 +1,16 @@
+/*
+    Sprite . JS
 
+    By Nathan
+
+    Imports:
+        N / A
+
+    Exports:
+        sprite (class) - Fundamental sprite asset
+*/
+
+import { point } from "../maths.js";
 
 export default class sprite 
 {
@@ -9,6 +21,10 @@ export default class sprite
         this.material = material;
 
         this.size = new point(opts.width * 1, opts.height * 1);
+
+        this.scale = new point(1.0, 1.0);
+
+        this.visible = true;
 
         this.image = new Image();
         this.image.src = url;
@@ -60,12 +76,12 @@ export default class sprite
 
     render(position, frames)
     {
-        if(this.isLoaded)
+        if(this.isLoaded && this.visible)
         {
             let frame_x = Math.floor(frames.x) * this.uv_x;
 			let frame_y = Math.floor(frames.y) * this.uv_y;
 			
-			let oMat = new matrix3x3().transition(position.x, position.y);
+			let oMat = new matrix3x3().transition(position.x + (this.size.x * ((this.scale.x < 0) * 1)), position.y + (this.size.y * ((this.scale.y < 0) * 1))).scale(this.scale.x, this.scale.y);
 			
 			this.webGL.useProgram(this.material.program);
 			

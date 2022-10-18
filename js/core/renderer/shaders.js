@@ -1,3 +1,14 @@
+/*
+    Shaders . JS
+
+    By Nathan
+
+    Imports:
+        N / A
+
+    Exports:
+        shaders (object[array[string]]) - Exports all webGL shaders as strings within arrays for each shader type. Main is 0.
+*/
 
 export default {
     vertex:
@@ -14,7 +25,7 @@ export default {
 
         void main()
         {
-            gl_Position = vec4( u_world * u_object * vec3(a_position, 1), 1);
+            gl_Position = vec4( u_world * u_object * vec3(a_position, 1.0), 1.0);
             v_texCoord = a_texCoord + u_frame;
         }
         `,

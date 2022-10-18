@@ -1,3 +1,15 @@
+/*
+    Maths . JS
+
+    By Nathan
+
+    Imports:
+        N / A
+
+    Exports:
+        point (class) - provides a basic class for an (x,y) point
+		matrix3x3 (class) - lots of maths, be weary
+*/
 
 export class point
 {

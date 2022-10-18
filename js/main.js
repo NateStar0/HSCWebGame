@@ -44,6 +44,8 @@ class game
         this.webGL = this.canvasElement.getContext("webgl2", {antialias : false});
         this.webGL.clearColor(0.0, 0.0, 0.0, 1.0);
 
+        window.webGL = this.webGL;
+
         document.body.appendChild(this.canvasElement);
 
         // Create managers
@@ -53,19 +55,22 @@ class game
 
     update ()
     {
+        // Shortcut
+        let gl = this.webGL;
+
         // webGL per-frame render preparation
-        this.webGL.viewport(0, 0, this.canvasElement.width, this.canvasElement.height);
-        this.webGL.clear(this.webGL.COLOR_BUFFER_BIT);
+        gl.viewport(0, 0, this.canvasElement.width, this.canvasElement.height);
+        gl.clear(gl.COLOR_BUFFER_BIT);
 
-        this.webGL.enable(this.webGL.BLEND);
-		this.webGL.blendFunc(this.webGL.SRC_ALPHA, this.webGL.ONE_MINUS_SRC_ALPHA);
+        gl.enable(gl.BLEND);
+		gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
-        // application specific frame functionality
+        // Application specific frame functionality
         this.logic.update();
         this.renderer.update();
 
         // Clear for next frame
-        this.webGL.flush();
+        gl.flush();
     }
 }
 

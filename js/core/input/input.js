@@ -1,3 +1,14 @@
+/*
+    Input . JS
+
+    By Nathan
+
+    Imports:
+        N / A
+
+    Exports:
+        input (class/manager) - input fetcher
+*/
 
 export default class input
 {

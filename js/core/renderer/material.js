@@ -1,4 +1,14 @@
+/*
+    Material . JS
 
+    By Nathan
+
+    Imports:
+        N / A
+
+    Exports:
+        material (class) - shader material for sprites
+*/
 
 export default class material
 {

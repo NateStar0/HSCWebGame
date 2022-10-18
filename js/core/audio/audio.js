@@ -1,3 +1,14 @@
+/*
+    Audio . JS
+
+    By Nathan
+
+    Imports:
+        N / A
+
+    Exports:
+        sound (class) - basic wrapper for HTML5 sound system
+*/
 
 export default class sound
 {
